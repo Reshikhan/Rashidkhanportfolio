@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rashid Khan - Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#34C759", // iOS Green
+                        "primary-dark": "#30D158",
+                        "background-light": "#F5F5F7", // iOS Light Gray
+                        "background-dark": "#000000", // iOS/OLED Black
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1C1C1E", // iOS Dark Gray
+                        "text-primary-light": "#1D1D1F",
+                        "text-primary-dark": "#F5F5F7",
+                        "text-secondary-light": "#86868B",
+                        "text-secondary-dark": "#86868B",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "3xl": "3rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out 4s infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d1d6; 
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #3a3a3c; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #34C759; 
+        }.glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.04);
+        }
+        .dark .glass-card {
+            background: rgba(30, 30, 30, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.3);
+        }.perspective-container {
+            perspective: 1200px;
+        }
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+    </style>
+</head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="manifest" href="site.webmanifest">
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark overflow-x-hidden antialiased selection:bg-primary selection:text-white transition-colors duration-700 ease-in-out">
+<div class="min-h-screen flex flex-col relative">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out glass border-b border-black/5 dark:border-white/5">
+<div class="max-w-[1280px] mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-600 flex items-center justify-center text-white shadow-lg shadow-primary/30 transform transition-transform duration-500 hover:rotate-6">
+<span class="material-symbols-outlined text-xl">deployed_code</span>
+</div>
+<h2 class="text-text-primary-light dark:text-white text-lg font-bold tracking-tight">RASHID KHAN</h2>
+</div>
+<nav class="hidden md:flex items-center gap-1 bg-black/5 dark:bg-white/5 p-1.5 rounded-full backdrop-blur-md border border-white/10 dark:border-white/5">
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#about">About</a>
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#education">Education</a>
+
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#achievements">Achievements</a>
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#courses">Courses</a>
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#languages">Languages</a>
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#skills">Skills</a>
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#gallery">Gallery</a>
+<a class="px-5 py-2 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-white/10 transition-all duration-300 hover:shadow-sm" href="#contact">Contact</a>
+</nav>
+<div id="mobileMenu" class="md:hidden hidden fixed top-0 left-0 w-full h-full bg-black/50 z-50">
+<div class="bg-white dark:bg-card-dark p-8 rounded-b-2xl shadow-lg">
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#education">Education</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#achievements">Achievements</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#courses">Courses</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#languages">Languages</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#skills">Skills</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#gallery">Gallery</a>
+<a class="block py-4 text-lg font-medium hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+<button id="closeMenu" class="mt-4 px-4 py-2 bg-primary text-white rounded-full">Close</button>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Toggle Dark Mode" class="w-10 h-10 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center hover:bg-black/10 dark:hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95" onclick="toggleTheme()">
+<span class="material-symbols-outlined dark:hidden text-gray-600">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block text-yellow-400">light_mode</span>
+</button>
+<a href="Rashid_Khan_CV.pdf.pdf" target="_blank" class="hidden sm:flex items-center gap-2 bg-text-primary-light dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-black/10 dark:shadow-white/10 hover:shadow-xl">
+<span> View CV</span>
+</a>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<section class="relative pt-32 pb-20 sm:pt-40 sm:pb-32 flex-1 flex flex-col justify-center overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-500/10 dark:bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-float"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-500/10 dark:bg-purple-500/10 rounded-full blur-[100px] pointer-events-none animate-float-delayed"></div>
+<div class="max-w-[1280px] mx-auto w-full px-6 sm:px-10 relative z-10">
+<div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+<div class="flex flex-col gap-8 flex-1 lg:max-w-[640px] animate-fade-in-up">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/5 dark:border-white/10 bg-white/40 dark:bg-white/5 backdrop-blur-xl w-fit shadow-sm hover:bg-white/60 dark:hover:bg-white/10 transition-colors duration-300">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-bold uppercase tracking-wider">Seeking for Bachelors Degree Scholarship</span>
+</div>
+<div class="relative">
+<div class="absolute -left-4 top-0 w-20 h-20 bg-primary/20 rounded-full blur-2xl dark:bg-primary/10"></div>
+<h1 class="relative text-6xl sm:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tight text-text-primary-light dark:text-white">
+                            Rashid <br/>
+<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-600 dark:from-primary dark:to-emerald-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khan</span>.
+                        </h1>
+</div>
+<p class="text-xl text-text-secondary-light dark:text-text-secondary-dark max-w-[540px] leading-relaxed font-medium">
+                        My name is Rashid Khan, I am a Computer Science student who completed Higher Secondary School education in 2024, achieving an A+ grade in Computer Science. As a highly motivated and detail-oriented student, I am excited to apply my skills and knowledge in programming and software engineering to drive innovation and solve real-world problems.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<a class="h-14 px-8 rounded-full bg-text-primary-light dark:bg-white text-white dark:text-black font-bold text-lg flex items-center gap-2 shadow-xl shadow-black/10 dark:shadow-white/5 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300" href="#about">
+                            View More
+                            <span class="material-symbols-outlined text-xl">arrow_downward</span>
+</a>
+<a class="h-14 px-8 rounded-full glass border border-black/10 dark:border-white/10 text-text-primary-light dark:text-white font-bold text-lg hover:bg-white dark:hover:bg-white/10 transition-all duration-300 flex items-center gap-2" href="#contact">
+                            Contact Me
+                        </a>
+</div>
+</div>
+<div class="flex-1 w-full flex items-center justify-center perspective-container">
+<div class="relative w-[320px] h-[420px] sm:w-[380px] sm:h-[480px] group cursor-pointer">
+<div class="absolute -top-12 -right-12 w-24 h-24 rounded-2xl bg-white/80 dark:bg-card-dark/80 shadow-2xl z-20 flex items-center justify-center animate-float-delayed glass border border-white/40 dark:border-white/10 transition-transform duration-500 group-hover:scale-110">
+<span class="material-symbols-outlined text-4xl text-primary">code</span>
+</div>
+<div class="absolute -bottom-8 -left-8 w-20 h-20 rounded-full bg-black/80 dark:bg-white/80 shadow-2xl z-20 flex items-center justify-center animate-float glass border border-white/40 dark:border-white/10 transition-transform duration-500 group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl text-white dark:text-black">palette</span>
+</div>
+<div class="w-full h-full rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(255,255,255,0.05)] border-[6px] border-white dark:border-white/5 relative z-10 bg-gray-200 dark:bg-gray-800 transition-transform duration-700 ease-out hover:rotate-y-6 hover:rotate-x-3 transform-preserve-3d">
+<img alt="Alexander Doe Portrait" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="Gemini_Generated_Image_wqqcvowqqcvowqqc.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6 right-6 translate-y-2 opacity-90 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+<div class="glass p-4 rounded-2xl backdrop-blur-xl border border-white/30">
+<p class="text-white/60 text-xs font-bold uppercase tracking-wider mb-1">Based in</p>
+<div class="flex items-center gap-2 text-white font-bold">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                        Peshawar , Pakistan
+                                    </div>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 border-2 border-dashed border-primary/30 dark:border-primary/20 rounded-[2.5rem] -rotate-6 scale-105 -z-10 group-hover:-rotate-12 transition-transform duration-700 ease-out"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-white dark:bg-[#0A0A0A] transition-colors duration-700 animate-fade-in-up" id="about">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="grid lg:grid-cols-[1fr_1.5fr] gap-16">
+<div class="flex flex-col gap-6 md:sticky md:top-32 h-fit">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">About Me</span>
+<h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-text-primary-light dark:text-white leading-tight">
+                        Hardworking. Responsible. <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Motivated.</span>
+</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-lg leading-relaxed">
+                       I recently completed my
+Higher Secondary School education from Government College Peshawar, where I achieved
+A+ grades in key subjects such as Computer Science, Mathematics, Physics, and English.
+These academic achievements reflect not only my dedication but also my genuine enthusiasm
+for technology and innovation.
+From a young age, I have been deeply inspired by the transformative power of technology.
+Growing up, I witnessed how limited access to digital resources affected education and
+opportunities in my community. This motivated me to explore computing beyond the
+classroom. I began learning programming languages such as Java, C++, and HTML, and
+gradually applied my knowledge by working on small freelance software and web
+development projects. These experiences strengthened my problem-solving. 
+<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="p-4 rounded-2xl bg-background-light dark:bg-card-dark transition-transform duration-300 hover:scale-[1.02]">
+<span class="block text-3xl font-black text-text-primary-light dark:text-white mb-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12</span>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Years &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education</span>
+</div>
+<div class="p-4 rounded-2xl bg-background-light dark:bg-card-dark transition-transform duration-300 hover:scale-[1.02]">
+<span class="block text-3xl font-black text-text-primary-light dark:text-white mb-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20+</span>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;projects <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Done</span>
+</div>
+</div>
+</div> 
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="group glass-card p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 dark:hover:bg-card-dark/80">
+<div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-500 cubic-bezier(0.175, 0.885, 0.32, 1.275)">
+<span class="material-symbols-outlined text-3xl">view_in_ar</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-3">Long Term ambition</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">My long-term ambition is to become a skilled software engineer who develops innovative
+systems that address social and economic challenges, especially in underprivileged areas of
+Pakistan.</p>
+</div>
+<div class="group glass-card p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:translate-y-12 dark:hover:bg-card-dark/80">
+<div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-500 cubic-bezier(0.175, 0.885, 0.32, 1.275)">
+<span class="material-symbols-outlined text-3xl">palette</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-3">Mentor Ship</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">I aspire
+to mentor aspiring students and promote technological awareness among youth, encouraging
+them to pursue careers in STEM fields.</p>
+</div>
+<div class="group glass-card p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 dark:hover:bg-card-dark/80">
+<div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform duration-500 cubic-bezier(0.175, 0.885, 0.32, 1.275)">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-3">My strengths</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">My strengths include being hardworking, responsible, and highly motivated.
+I consistently put full effort into my work, which is reflected in my A+ academic results. I am a responsible person, able to manage tasks effectively and complete them on time. I also stay motivated to learn new technologies, especially in programming, AI, and software engineering.</p>
+</div>
+<div class="group glass-card p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:translate-y-12 dark:hover:bg-card-dark/80">
+<div class="w-14 h-14 rounded-2xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 dark:text-orange-400 mb-6 group-hover:scale-110 transition-transform duration-500 cubic-bezier(0.175, 0.885, 0.32, 1.275)">
+<span class="material-symbols-outlined text-3xl">speed</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-3">Confident</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">I am confident that my academic background, technical skills, and strong
+sense of purpose will allow me to make meaningful contributions to the university
+community while growing both professionally and personally.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-white dark:bg-[#0A0A0A] transition-colors duration-700 animate-fade-in-up" id="education">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-text-primary-light dark:text-white mb-4">Education</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">My educational background and qualifications.</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-8">
+<div class="glass-card p-8 rounded-[2rem]">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">Secondary School Education</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark mb-2">Natural Science</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Peshawar Model School Boys-1, Warsak Road Peshawar, Pakistan
+ <br> 2017-2022</p>
+ <p>Subjects:</p>
+ <p class="text-text-secondary-light dark:text-text-secondary-dark mb-2">General Science, English, Mathematics, Physics <br></p>
+
+<p>Obtained Grade:</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark mb-2">A+ Grade in all Subjects,scoring 90%</p><br>
+<a href="10th Certificate.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View Diploma
+</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="10th class DMC.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View Transcript
+</a>
+</div>
+<div class="glass-card p-8 rounded-[2rem]">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">Higher Secondary School Education (College)</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark mb-2">Computer Science</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Government College Peshawar, Pakistan <br> 2023-2024</p>
+ <p>Subjects:</p>
+ <p class="text-text-secondary-light dark:text-text-secondary-dark mb-2">Computer Science, English, Mathematics, Physics <br></p>
+
+<p>Obtained Grade:</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark mb-2">A+ Grade in all Subjects, scoring 84.83%</p><br>
+<a href="12th certificate.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View Diploma
+</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="12th DMC.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View Transcript
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-white dark:bg-[#0A0A0A] transition-colors duration-700 animate-fade-in-up" id="achievements">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-text-primary-light dark:text-white mb-4">Achievements</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">My notable accomplishments and recognitions.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="glass-card p-8 rounded-[2rem] text-center">
+<div class="w-16 h-16 rounded-2xl bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-6 mx-auto">
+<span class="material-symbols-outlined text-3xl">trophy</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">Topper</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Overall Topper of the Government Primary School (SSC).</p>
+</div>
+
+<div class="glass-card p-8 rounded-[2rem] text-center">
+<div class="w-16 h-16 rounded-2xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400 mb-6 mx-auto">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">Good Will Scholarship</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Goodwill Scholarship in Peshawar Model School Boys-1, Warsak Road Peshawar,Pakistan.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-background-light dark:bg-background-dark transition-colors duration-700 animate-fade-in-up" id="courses">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-text-primary-light dark:text-white mb-4">Courses</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Professional courses and certifications I've completed.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="glass-card p-8 rounded-[2rem]">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">C Programming Basics</h3> <a href="C Programming Basics.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View certificate
+</a>
+</div>
+<div class="glass-card p-8 rounded-[2rem]">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">Introduction to HTML</h3>
+<a href="HTML Certificate.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View certificate
+</a>
+</div>
+<div class="glass-card p-8 rounded-[2rem]">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-white mb-4">Introduction to Generative AI</h3>
+<a href="Generative AI Certificate.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View certificate
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-white dark:bg-[#0A0A0A] transition-colors duration-700" id="languages">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-text-primary-light dark:text-white mb-4">Languages</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Languages I speak.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="glass-card p-6 rounded-[2rem] text-center">
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white mb-2">Pashto</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Native</p>
+</div>
+<div class="glass-card p-6 rounded-[2rem] text-center">
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white mb-2">Urdu</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Fluent</p>
+</div>
+<div class="glass-card p-6 rounded-[2rem] text-center">
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white mb-2">English</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Fluent</p>
+<a href="English Proficiency Letter.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-text-primary-light dark:text-white font-bold hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+View Proficiency Certificate
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-background-light dark:bg-background-dark transition-colors duration-700" id="skills">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-text-primary-light dark:text-white mb-4">Skills</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Technical skills and tools I work with.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-6 rounded-[2rem] text-center hover:scale-105 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 mx-auto">
+<span class="material-symbols-outlined text-2xl">code</span>
+</div>
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white">C++</h3>
+</div>
+<div class="glass-card p-6 rounded-[2rem] text-center hover:scale-105 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-4 mx-auto">
+<span class="material-symbols-outlined text-2xl">terminal</span>
+</div>
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white">Python</h3>
+</div>
+<div class="glass-card p-6 rounded-[2rem] text-center hover:scale-105 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400 mb-4 mx-auto">
+<span class="material-symbols-outlined text-2xl">code</span>
+</div>
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white">JavaScript</h3>
+</div>
+<div class="glass-card p-6 rounded-[2rem] text-center hover:scale-105 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-4 mx-auto">
+<span class="material-symbols-outlined text-2xl">web</span>
+</div>
+<h3 class="text-lg font-bold text-text-primary-light dark:text-white">HTML</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative bg-white dark:bg-[#0A0A0A] transition-colors duration-700" id="gallery">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-text-primary-light dark:text-white mb-4">Gallery</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative rounded-[2rem] overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-[4/3] hover:scale-105 transition-transform duration-500">
+<img alt="Project 1" class="w-full h-full object-cover" src="WhatsApp Image 2025-10-23 at 19.09.00_1f9dfabd.jpg">
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+</div>
+</div>
+</div>
+<div class="group relative rounded-[2rem] overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-[4/3] hover:scale-105 transition-transform duration-500">
+<img alt="Project 2" class="w-full h-full object-cover" src="WhatsApp Image 2025-10-23 at 19.08.59_ea629f30.jpg">
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+
+</div>
+</div>
+</div>
+<div class="group relative rounded-[2rem] overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-[4/3] hover:scale-105 transition-transform duration-500">
+<img alt="Project 3" class="w-full h-full object-cover" src="WhatsApp Image 2025-12-12 at 8.35.05 PM.jpeg">
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+
+</div>
+</div>
+</div>
+<div class="group relative rounded-[2rem] overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-[4/3] hover:scale-105 transition-transform duration-500">
+<img alt="Project 4" class="w-full h-full object-cover" src="WhatsApp Image 2025-10-23 at 19.08.59_da6d7c0f.jpg">
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+
+</div>
+</div>
+</div>
+<div class="group relative rounded-[2rem] overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-[4/3] hover:scale-105 transition-transform duration-500">
+<img alt="Project 5" class="w-full h-full object-cover" src="WhatsApp Image 2025-12-12 at 8.35.06 PM.jpeg">
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+
+</div>
+</div>
+</div>
+<div class="group relative rounded-[2rem] overflow-hidden bg-gray-200 dark:bg-gray-800 aspect-[4/3] hover:scale-105 transition-transform duration-500">
+<img alt="Project 6" class="w-full h-full object-cover" src="WhatsApp Image 2025-10-23 at 18.53.56_bb2a3871.jpg">
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-24 relative overflow-hidden bg-background-light dark:bg-background-dark border-t border-black/5 dark:border-white/5 transition-colors duration-700" id="contact">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/5 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/4"></div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 sm:px-10 relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+<div class="flex flex-col gap-8">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Get in touch</span>
+<h2 class="text-5xl sm:text-6xl font-black text-text-primary-light dark:text-white mt-4 mb-6 tracking-tight leading-tight">
+                            Let's build something <br/> <span class="text-primary">extraordinary.</span>
+</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-lg max-w-lg leading-relaxed">
+                            Whether you have a question, a project proposal, or just want to say hi, I'm always open to discussing new opportunities.
+                        </p>
+</div>
+<div class="flex flex-col gap-6 mt-4">
+<div class="flex items-center gap-5 group">
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs uppercase tracking-wider font-bold mb-1">Email Me</p>
+<a class="text-text-primary-light dark:text-white text-xl font-bold hover:text-primary transition-colors duration-300" target="_blank" href="mailto:rashidkhanreshii@gmail.com">rashidkhanreshii@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-5 group">
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined">phone</span>
+</div>
+<div>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs uppercase tracking-wider font-bold mb-1">Call Me</p>
+<a class="text-text-primary-light dark:text-white text-xl font-bold hover:text-primary transition-colors duration-300" href="tel:+923299978920">+923299978920</a>
+</div>
+</div>
+<div class="flex items-center gap-5 group">
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs uppercase tracking-wider font-bold mb-1">Location</p>
+<p class="text-text-primary-light dark:text-white text-xl font-bold">Peshawar Khyber Pakhtunkhwa,Pakistan</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-6">
+<a class="w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center text-text-primary-light dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 hover:-translate-y-1 shadow-sm" target="_blank" href="https://github.com/Reshikhan">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center text-text-primary-light dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 hover:-translate-y-1 shadow-sm" target="_blank" href="https://www.linkedin.com/in/rashidkhanreshi">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+</div>
+</div>
+
+
+
+<div class="glass-card p-8 sm:p-10 rounded-[2.5rem] relative overflow-hidden group border border-black/5 dark:border-white/10 shadow-xl">
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 relative z-10">
+<input type="hidden" name="access_key" value="a4f6231c-25c1-4c70-93ac-fded539314f5">
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-text-primary-light dark:text-white ml-1" for="name">Name</label>
+<input class="w-full h-12 rounded-xl bg-gray-50 dark:bg-black/40 border border-black/5 dark:border-white/10 text-text-primary-light dark:text-white placeholder-gray-400 px-4 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300" id="name" name="name" placeholder="Your Name" type="text" required/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-text-primary-light dark:text-white ml-1" for="email">Email</label>
+<input class="w-full h-12 rounded-xl bg-gray-50 dark:bg-black/40 border border-black/5 dark:border-white/10 text-text-primary-light dark:text-white placeholder-gray-400 px-4 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300" id="email" name="email" placeholder="youremail@example.com" type="email" required/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-text-primary-light dark:text-white ml-1" for="subject">Subject</label>
+<div class="relative">
+<select class="w-full h-12 rounded-xl bg-gray-50 dark:bg-black/40 border border-black/5 dark:border-white/10 text-text-primary-light dark:text-white px-4 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 appearance-none cursor-pointer" id="subject" name="subject" required>
+<option>General Inquiry</option>
+<option>Project Proposal</option>
+<option>Freelance Work</option>
+<option>Other</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-text-primary-light dark:text-white ml-1" for="message">Message</label>
+<textarea class="w-full rounded-xl bg-gray-50 dark:bg-black/40 border border-black/5 dark:border-white/10 text-text-primary-light dark:text-white placeholder-gray-400 p-4 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none" id="message" name="message" placeholder="Tell me about your project..." rows="4" required></textarea>
+</div>
+<button class="w-full h-14 rounded-xl bg-text-primary-light dark:bg-primary text-white dark:text-black font-bold text-base hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">send</span>
+</button>
+<div id="successMessage" class="hidden mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-xl">
+Thanks for your message! We'll get back to you soon.
+</div>
+</form>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row justify-between items-center text-sm text-text-secondary-light dark:text-text-secondary-dark gap-4">
+<p>© Rashid Khan. All rights reserved.</p>
+<div class="flex gap-6 font-medium">
+<a class="hover:text-text-primary-light dark:hover:text-white transition-colors duration-300"target="_blank" href="https://github.com/Reshikhan">Github</a>
+<a class="hover:text-text-primary-light dark:hover:text-white transition-colors duration-300"target="_blank" href="https://twitter.com/Reshikhan">Twitter</a>
+<a class="hover:text-text-primary-light dark:hover:text-white transition-colors duration-300"target="_blank" href="https://www.linkedin.com/in/rashidkhanreshi">Linkedin</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 invisible hover:scale-110 active:scale-95 z-40" onclick="scrollToTop()">
+    <span class="material-symbols-outlined text-2xl">arrow_upward</span>
+</button>
+
+<script>
+    const html = document.documentElement;
+    // Check local storage or system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+    } else {
+        html.classList.remove('dark');
+    }
+    // Function to toggle
+    function toggleTheme() {
+        html.classList.toggle('dark');
+        if (html.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+        } else {
+            localStorage.theme = 'light';
+        }
+    }
+
+    // Scroll to Top functionality
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const aboutSection = document.getElementById('about');
+
+    function toggleScrollToTopButton() {
+        const aboutSectionTop = aboutSection.offsetTop;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > aboutSectionTop - 100) {
+            scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            scrollToTopBtn.classList.add('opacity-100', 'visible');
+        } else {
+            scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', toggleScrollToTopButton);
+
+    // Mobile menu functionality
+    const menuBtn = document.querySelector('button.md\\:hidden.p-2');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+
+    // Handle contact form submission
+    const contactForm = document.querySelector('form[action="https://api.web3forms.com/submit"]');
+    const successMessage = document.getElementById('successMessage');
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                successMessage.classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            } else {
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+
+    // Animate all sections on scroll
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+</body></html>
